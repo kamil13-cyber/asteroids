@@ -9,14 +9,13 @@ from logger import log_event
 from shot import Shot
 
 
-def main():
+def main() -> None:
     # Initialize Pygame and set up the display
     pygame.init()
 
     # Set up the display and clock
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
-    dt = 0.0
 
     # Create the player at the center of the screen
     player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)
@@ -26,6 +25,7 @@ def main():
     drawable = pygame.sprite.Group(player)
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
+    dt = 0.0
 
     # Set the containers for the Player and Asteroid classes
     Player.containers = (updatable, drawable)
